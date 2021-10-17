@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 
-public class CertificateSigningRequestsOperationsImpl extends BaseOperation implements CertificateSigningRequestsResource {
+public class CertificateSigningRequestsOperationsImpl extends OperationSupport implements CertificateSigningRequestsResource {
 
 
   public CertificateSigningRequestsOperationsImpl() {
