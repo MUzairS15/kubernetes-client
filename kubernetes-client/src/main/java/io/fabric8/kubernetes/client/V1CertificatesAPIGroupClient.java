@@ -21,6 +21,8 @@ import io.fabric8.kubernetes.api.model.certificates.v1.CertificateSigningRequest
 import io.fabric8.kubernetes.client.dsl.NonNamespaceOperation;
 import io.fabric8.kubernetes.client.dsl.Resource;
 import io.fabric8.kubernetes.client.dsl.V1CertificatesAPIGroupDSL;
+//import io.fabric8.kubernetes.client.dsl.internal.CertificateSigningRequestsOperationsImpl;
+import io.fabric8.kubernetes.client.dsl.internal.CertificateSigningRequestsOperationsImpl;
 import okhttp3.OkHttpClient;
 
 import java.time.OffsetDateTime;
@@ -42,15 +44,7 @@ public class V1CertificatesAPIGroupClient extends BaseClient implements V1Certif
   }
 
   @Override
-  public CertificateSigningRequest approve(CertificateSigningRequest csr, String name) {
-
-    OffsetDateTime now = OffsetDateTime.now();
-    List<CertificateSigningRequestCondition> csrc = new ArrayList<CertificateSigningRequestCondition>() {
-      {
-        add(new CertificateSigningRequestCondition(now.toString(), now.toString(), "", "Kubernetes Java Client", "True", "Approved"));
-      }
-    };
-    csr.getStatus().setConditions(csrc);
-    return csr;
+  public CertificateSigningRequestsOperationsImpl approve() {
+    return  new CertificateSigningRequestsOperationsImpl();
   }
 }

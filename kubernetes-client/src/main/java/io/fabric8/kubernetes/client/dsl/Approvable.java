@@ -1,8 +1,9 @@
 package io.fabric8.kubernetes.client.dsl;
 
 import io.fabric8.kubernetes.api.model.certificates.v1.CertificateSigningRequest;
+import io.fabric8.kubernetes.client.dsl.internal.CertificateSigningRequestsOperationsImpl;
 
-public interface Approvable <T>{
+public interface Approvable {
 
-  public CertificateSigningRequest approve(T client, String csrName);
+  public CertificateSigningRequest approveorDeny(String csrName);
 }

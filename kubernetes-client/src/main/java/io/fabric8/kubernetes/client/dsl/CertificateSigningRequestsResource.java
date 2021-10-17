@@ -13,5 +13,5 @@ import java.io.PipedOutputStream;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;
 
-public interface CertificateSigningRequestsResource<T> extends Approvable<T>, Resource<CertificateSigningRequest> {
+public interface CertificateSigningRequestsResource<T> extends Approvable {
 }
