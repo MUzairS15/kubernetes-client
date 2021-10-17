@@ -17,12 +17,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 
-public class CertificateSigningRequestsOperationsImpl extends BaseOperation implements CertificateSigningRequestsResource {
-
-
-  public CertificateSigningRequestsOperationsImpl() {
-    super();
-  }
+public class CertificateSigningRequestsOperationsImpl extends OperationSupport implements CertificateSigningRequestsResource {
 
   public CertificateSigningRequest approveorDeny(String csrName)  {
 
@@ -55,7 +50,6 @@ public class CertificateSigningRequestsOperationsImpl extends BaseOperation impl
     }
     return csr;
   }
-//    return client;
-  }
+}
 
 
