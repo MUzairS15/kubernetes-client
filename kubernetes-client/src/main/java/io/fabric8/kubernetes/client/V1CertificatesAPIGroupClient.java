@@ -24,10 +24,6 @@ import io.fabric8.kubernetes.client.dsl.V1CertificatesAPIGroupDSL;
 import io.fabric8.kubernetes.client.dsl.internal.CertificateSigningRequestsOperationsImpl;
 import okhttp3.OkHttpClient;
 
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
 public class V1CertificatesAPIGroupClient extends BaseClient implements V1CertificatesAPIGroupDSL {
   public V1CertificatesAPIGroupClient() {
     super();
@@ -44,6 +40,6 @@ public class V1CertificatesAPIGroupClient extends BaseClient implements V1Certif
 
   @Override
   public CertificateSigningRequestsOperationsImpl approve() {
-    return  new CertificateSigningRequestsOperationsImpl();
+    return new CertificateSigningRequestsOperationsImpl(this.httpClient, this.getConfiguration());
   }
 }
